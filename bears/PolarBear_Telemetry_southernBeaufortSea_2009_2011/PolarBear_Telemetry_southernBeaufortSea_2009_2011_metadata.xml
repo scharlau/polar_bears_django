@@ -1,0 +1,851 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>USGS Alaska Science Center, Polar Bear Research Program</origin>
+        <pubdate>201705</pubdate>
+        <title>Sensor and Location data from Ear Tag PTTs Deployed on Polar Bears in the Southern Beaufort Sea 2009 to 2011</title>
+        <geoform>spreadsheet</geoform>
+        <pubinfo>
+          <pubplace>Anchorage, AK</pubplace>
+          <publish>U.S. Geological Survey, Alaska Science Center</publish>
+        </pubinfo>
+        <othercit>Suggested citation: USGS Alaska Science Center, Polar Bear Research Program, 2017, Sensor and Location data from Ear Tag PTTs Deployed on Polar Bears in the Southern Beaufort Sea 2009 to 2011: U.S. Geological Survey data release, https://doi.org/10.5066/F7057D4R.</othercit>
+        <onlink>https://doi.org/10.5066/F7057D4R</onlink>
+        <lworkcit>
+          <citeinfo>
+            <origin>USGS Alaska Science Center, Polar Bear Research Program</origin>
+            <pubdate>Unknown</pubdate>
+            <title>Understanding and Forecasting the Response of Polar Bear Populations to a Rapidly Diminishing Sea Ice Environment</title>
+            <geoform>website</geoform>
+            <pubinfo>
+              <pubplace>Anchorage, Alaska</pubplace>
+              <publish>U.S. Geological Survey, Alaska Science Center</publish>
+            </pubinfo>
+            <onlink>https://alaska.usgs.gov/portal/project.php?project_id=16</onlink>
+          </citeinfo>
+        </lworkcit>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>These are data collected from Wildlife Computers ear tag platform transmitter terminals (PTT) deployed on polar bears in the southern Beaufort Sea during the months of March, April, August, September, and October between 2009 and 2011.</abstract>
+      <purpose>To examine the performance and retention of ear tag satellite transmitters attached to polar bears.</purpose>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <rngdates>
+          <begdate>20090817</begdate>
+          <enddate>20110808</enddate>
+        </rngdates>
+      </timeinfo>
+      <current>ground condition</current>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update>Not planned</update>
+    </status>
+    <spdom>
+      <descgeog>southern Beaufort Sea</descgeog>
+      <bounding>
+        <westbc>-158.4832</westbc>
+        <eastbc>-142.3786</eastbc>
+        <northbc>71.9511</northbc>
+        <southbc>69.9234</southbc>
+      </bounding>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>ISO 19115 Topic Category</themekt>
+        <themekey>biota</themekey>
+      </theme>
+      <theme>
+        <themekt>USGS Biocomplexity Thesaurus</themekt>
+        <themekey>Animals</themekey>
+        <themekey>Mammals</themekey>
+        <themekey>Telemetry</themekey>
+        <themekey>Tagging</themekey>
+        <themekey>Tagging devices</themekey>
+        <themekey>Tracking</themekey>
+        <themekey>Tracking equipment</themekey>
+      </theme>
+      <theme>
+        <themekt>None</themekt>
+        <themekey>platform transmitter terminal</themekey>
+        <themekey>PTT</themekey>
+        <themekey>Argos</themekey>
+      </theme>
+      <place>
+        <placekt>Geographic Names Information System</placekt>
+        <placekey>Alaska</placekey>
+        <placekey>Beaufort Sea</placekey>
+      </place>
+      <stratum>
+        <stratkt>USGS Biocomplexity Thesaurus</stratkt>
+        <stratkey>marine</stratkey>
+      </stratum>
+    </keywords>
+    <taxonomy>
+      <keywtax>
+        <taxonkt>USGS Biocomplexity Thesaurus</taxonkt>
+        <taxonkey>Mammals</taxonkey>
+      </keywtax>
+      <taxonsys>
+        <classsys>
+          <classcit>
+            <citeinfo>
+              <origin>Integrated Taxonomic Information System (ITIS)</origin>
+              <pubdate>Unknown</pubdate>
+              <title>Integrated Taxonomic Information System (ITIS)</title>
+              <geoform>database</geoform>
+              <serinfo>
+                <sername>ITIS</sername>
+                <issue>TSN: 180542</issue>
+              </serinfo>
+              <pubinfo>
+                <pubplace>http://www.itis.gov</pubplace>
+                <publish>Integrated Taxonomic Information System</publish>
+              </pubinfo>
+              <onlink>http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&amp;search_value=180542</onlink>
+            </citeinfo>
+          </classcit>
+        </classsys>
+        <taxonpro>expert advice</taxonpro>
+        <taxoncom>Polar bears are easily distinguishable from other species by physical characteristics and habitat use patterns.  In most cases, species was confirmed genetically.</taxoncom>
+      </taxonsys>
+      <taxongen>polar bears</taxongen>
+      <taxoncl>
+        <taxonrn>Kingdom</taxonrn>
+        <taxonrv>Animalia</taxonrv>
+        <taxoncl>
+          <taxonrn>Subkingdom</taxonrn>
+          <taxonrv>Bilateria</taxonrv>
+          <taxoncl>
+            <taxonrn>Infrakingdom</taxonrn>
+            <taxonrv>Deuterostomia</taxonrv>
+            <taxoncl>
+              <taxonrn>Phylum</taxonrn>
+              <taxonrv>Chordata</taxonrv>
+              <taxoncl>
+                <taxonrn>Subphylum</taxonrn>
+                <taxonrv>Vertebrata</taxonrv>
+                <taxoncl>
+                  <taxonrn>Infraphylum</taxonrn>
+                  <taxonrv>Gnathostomata</taxonrv>
+                  <taxoncl>
+                    <taxonrn>Superclass</taxonrn>
+                    <taxonrv>Tetrapoda</taxonrv>
+                    <taxoncl>
+                      <taxonrn>Class</taxonrn>
+                      <taxonrv>Mammalia</taxonrv>
+                      <taxoncl>
+                        <taxonrn>Subclass</taxonrn>
+                        <taxonrv>Theria</taxonrv>
+                        <taxoncl>
+                          <taxonrn>Infraclass</taxonrn>
+                          <taxonrv>Eutheria</taxonrv>
+                          <taxoncl>
+                            <taxonrn>Order</taxonrn>
+                            <taxonrv>Carnivora</taxonrv>
+                            <taxoncl>
+                              <taxonrn>Suborder</taxonrn>
+                              <taxonrv>Caniformia</taxonrv>
+                              <taxoncl>
+                                <taxonrn>Family</taxonrn>
+                                <taxonrv>Ursidae</taxonrv>
+                                <taxoncl>
+                                  <taxonrn>Genus</taxonrn>
+                                  <taxonrv>Ursus</taxonrv>
+                                  <taxoncl>
+                                    <taxonrn>Species</taxonrn>
+                                    <taxonrv>Ursus maritimus</taxonrv>
+                                    <common>Polar Bear</common>
+                                  </taxoncl>
+                                </taxoncl>
+                              </taxoncl>
+                            </taxoncl>
+                          </taxoncl>
+                        </taxoncl>
+                      </taxoncl>
+                    </taxoncl>
+                  </taxoncl>
+                </taxoncl>
+              </taxoncl>
+            </taxoncl>
+          </taxoncl>
+        </taxoncl>
+      </taxoncl>
+    </taxonomy>
+    <accconst>None</accconst>
+    <useconst>It is requested that the authors and the USGS Alaska Science Center be cited for any subsequent publications that reference this dataset. It is strongly recommended that careful attention be paid to the contents of the metadata file associated with these data to evaluate data set limitations, restrictions or intended use. ular.</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntperp>
+          <cntper>George Durner</cntper>
+          <cntorg>US Geological Survey</cntorg>
+        </cntperp>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>4210 University Drive</address>
+          <city>Anchorage</city>
+          <state>Alaska</state>
+          <postal>99508</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>907-786-7000</cntvoice>
+      </cntinfo>
+    </ptcontac>
+    <crossref>
+      <citeinfo>
+        <origin>Wiig, Oystein</origin>
+        <origin>Born, Erik W.</origin>
+        <origin>Laidre, Kristen L.</origin>
+        <origin>Dietz, Rune</origin>
+        <origin>Jensen, Mikkel Villum</origin>
+        <origin>Durner, George M.</origin>
+        <origin>Pagano, Anthony M.</origin>
+        <origin>Regehr, Eric</origin>
+        <origin>St Martin, Michelle</origin>
+        <origin>Atkinson, Stephen</origin>
+        <origin>Dyck, Markus</origin>
+        <pubdate>2017</pubdate>
+        <title>Performance and retention of lightweight satellite radio tags applied to the ears of polar bears (Ursus maritimus)</title>
+        <geoform>journal article</geoform>
+        <othercit>Wiig, Ø., E. W. Born, K. L. Laidre, R. Dietz, M. V. Jensen, G. M. Durner, A. M. Pagano, E. V. Regehr, M. St. Martin, S. N. Atkinson, and M. Dyck. 2017. Performance and retention of lightweight satellite radio tags applied to the ears of polar bears (Ursus maritimus). Animal Biotelemetry 5(9). doi:10.1186/s40317-017-0124-0.</othercit>
+      </citeinfo>
+    </crossref>
+  </idinfo>
+  <dataqual>
+    <attracc>
+      <attraccr>No formal attribute accuracy tests were conducted.</attraccr>
+    </attracc>
+    <logic>No formal logical consistency tests were conducted.</logic>
+    <complete>Data set is considered complete for the information presented, as described in the abstract. Users are advised to read the rest of the metadata record carefully for additional details.</complete>
+    <posacc>
+      <horizpa>
+        <horizpar>No formal positional accuracy tests were conducted.</horizpar>
+      </horizpa>
+    </posacc>
+    <lineage>
+      <method>
+        <methtype>Field</methtype>
+        <methdesc>Wildlife Computers platform transmitter terminals (PTT) were all of the SPOT model, built as ear tags, and attached to the ears of subadult and adult male and female polar bears. See http://wildlifecomputers.com/our-tags/spot/.</methdesc>
+      </method>
+      <procstep>
+        <procdesc>No process steps have been described for this data set.</procdesc>
+        <procdate>Unknown</procdate>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <spdoinfo>
+    <direct>Point</direct>
+  </spdoinfo>
+  <spref>
+    <horizsys>
+      <geodetic>
+        <horizdn>World Geodetic System of 1984</horizdn>
+        <ellips>World Geodetic System of 1984</ellips>
+        <semiaxis>6378137</semiaxis>
+        <denflat>298.257223563</denflat>
+      </geodetic>
+    </horizsys>
+  </spref>
+  <eainfo>
+    <detailed>
+      <enttyp>
+        <enttypl>USGS_WC_eartag_deployments_2009-2011</enttypl>
+        <enttypd>Spreadsheet of Wildlife Computer eartag deployment information.</enttypd>
+        <enttypds>Author defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>BearID</attrlabl>
+        <attrdef>Number assigned to the bear at first capture.</attrdef>
+        <attrdefs>Author defined</attrdefs>
+        <attrdomv>
+          <udom>Numbers assigned to identify the bears</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>PTT_ID</attrlabl>
+        <attrdef>Identification number for the Platform Terminal Transmitter (PTT).</attrdef>
+        <attrdefs>Author defined</attrdefs>
+        <attrdomv>
+          <udom>Numbers assigned to identify the PTT.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Model</attrlabl>
+        <attrdef>Model type of the PTT.</attrdef>
+        <attrdefs>Author defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>SPOT-227B</edomv>
+            <edomvd>Model type SPOT-227B</edomvd>
+            <edomvds>author defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>SPOT-227C</edomv>
+            <edomvd>Model type SPOT-227C</edomvd>
+            <edomvds>author defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Repetition Rate (sec)</attrlabl>
+        <attrdef>Interval between message transmissions</attrdef>
+        <attrdefs>Author defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>60</rdommin>
+            <rdommax>90</rdommax>
+            <attrunit>seconds</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Transmit hours (GMT)</attrlabl>
+        <attrdef>Need def</attrdef>
+        <attrdefs>Author defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>18-21</rdommin>
+            <rdommax>20-23</rdommax>
+            <attrunit>hours</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Transmit days</attrlabl>
+        <attrdef>PTT transmission schedule to Argos satellites.</attrdef>
+        <attrdefs>Author defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>daily</edomv>
+            <edomvd>PTT transmitted every day.</edomvd>
+            <edomvds>Author defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>every 2nd day</edomv>
+            <edomvd>PTT transmitted every second day.</edomvd>
+            <edomvds>Author defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Capture Latitude</attrlabl>
+        <attrdef>Latitude of a bear’s capture.</attrdef>
+        <attrdefs>Author defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>69.9234481813273</rdommin>
+            <rdommax>71.9510879516601</rdommax>
+            <attrunit>decimal degrees</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Capture Longitude</attrlabl>
+        <attrdef>Longitude of a bear’s capture.</attrdef>
+        <attrdefs>Author defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-158.483163452286</rdommin>
+            <rdommax>-142.378631591567</rdommax>
+            <attrunit>decimal degrees</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Apply DateTime</attrlabl>
+        <attrdef>Date and time in which PTTs were applied to bears.</attrdef>
+        <attrdefs>Author defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>17Aug2009 0239</rdommin>
+            <rdommax>01Apr2011 1118</rdommax>
+            <attrunit>date time GMT, 24-hour clock</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Sex</attrlabl>
+        <attrdef>Gender of the polar bear.</attrdef>
+        <attrdefs>Author defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>F</edomv>
+            <edomvd>Female</edomvd>
+            <edomvds>author defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>M</edomv>
+            <edomvd>Male</edomvd>
+            <edomvds>author defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Age Class</attrlabl>
+        <attrdef>Classification of the age of the polar bear.</attrdef>
+        <attrdefs>Author defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>A</edomv>
+            <edomvd>Adult</edomvd>
+            <edomvds>author defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>S</edomv>
+            <edomvd>Subadult</edomvd>
+            <edomvds>author defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Ear applied</attrlabl>
+        <attrdef>Which ear the PTT was applied to on the polar bear.</attrdef>
+        <attrdefs>Author defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>Left</edomv>
+            <edomvd>PTT applied to left ear.</edomvd>
+            <edomvds>author defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>Right</edomv>
+            <edomvd>PTT applied to right ear.</edomvd>
+            <edomvds>author defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Recapture DateTime</attrlabl>
+        <attrdef>Date and time in which bears deployed with PTT ear tags were recaptured.</attrdef>
+        <attrdefs>Author defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>18Oct2009 0558</rdommin>
+            <rdommax>11Apr2014 1130</rdommax>
+            <attrunit>date time GMT, 24-hour clock</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>HarvestDate</attrlabl>
+        <attrdef>Date and time in which bears deployed with PTT ear tags were harvested.</attrdef>
+        <attrdefs>Author defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>15Mar2012</rdommin>
+            <rdommax>15Mar2012</rdommax>
+            <attrunit>date</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Sign of Injury at Recapture</attrlabl>
+        <attrdef>Observation of injury associated with the eartag PTT.</attrdef>
+        <attrdefs>Author defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>No</edomv>
+            <edomvd>No injury observed</edomvd>
+            <edomvds>author defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>Ear split and healed</edomv>
+            <edomvd>Ear pinna split and healed.</edomvd>
+            <edomvds>author defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>USGS_WC_eartags_output_files_2009-2011-Status</enttypl>
+        <enttypd>Every Wildlife Computers tag sends regular status messages in addition to transmitting its experimental information. Status messages contain information which indicates the health and overall state of the tag. Column names are set by Wildlife Computers software.  The user is advised that this file includes records before the tag was deployed on a bear and may include records after the tag was removed from the bear.  The user of this data is advised to reference tag deployment histories in BearID in USGS_WC_eartag_deployments_2009-2011.  The data in this file have not undergone any tests for spatial accuracy.</enttypd>
+        <enttypds>http://wildlifecomputers.com/wp-content/uploads/manuals/Spreadsheet-File-Descriptions.pdf.</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>DeployID</attrlabl>
+        <attrdef>Friendly name given to the tag by the user.</attrdef>
+        <attrdefs>http://wildlifecomputers.com/wp-content/uploads/manuals/Spreadsheet-File-Descriptions.pdf</attrdefs>
+        <attrdomv>
+          <udom>Is analogous to BearID in USGS_WC_eartag_deployments_2009-2011.  When multiple PTT deployments occurred for a bear, values of DeployID are denoted with “(1)” appended to the value.  For example, DeployID = ‘20446’ is assigned to Ptt = ‘93963’.  This DeployID is associated with a second tag deployment (i.e., Ptt = ‘96872’), hence DeployID = ‘20446  (1)’.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Ptt</attrlabl>
+        <attrdef>Argos Platform Transmitter Terminal identifier, which is a unique number identifying your instrument.</attrdef>
+        <attrdefs>http://wildlifecomputers.com/wp-content/uploads/manuals/Spreadsheet-File-Descriptions.pdf</attrdefs>
+        <attrdomv>
+          <udom>Numbers assigned to identify the PTT. Is analogous to PTT_ID in USGS_WC_eartag_deployments_2009-2011.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Received</attrlabl>
+        <attrdef>Time and date of message reception as reported by Argos.</attrdef>
+        <attrdefs>http://wildlifecomputers.com/wp-content/uploads/manuals/Spreadsheet-File-Descriptions.pdf</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>22July2009 0152</rdommin>
+            <rdommax>07Aug2011 1911</rdommax>
+            <attrunit>date time GMT, 24-hour clock</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>LocationQuality</attrlabl>
+        <attrdef>Location class assigned by Argos for the computed position of the tag when this status message was received by Argos. Blank cells indicate that no location could be calculated by Argos.</attrdef>
+        <attrdefs>http://wildlifecomputers.com/wp-content/uploads/manuals/Spreadsheet-File-Descriptions.pdf</attrdefs>
+        <attrdomv>
+          <codesetd>
+            <codesetn>Argos User Manual 3.4 Location classes</codesetn>
+            <codesets>http://www.argos-system.org/manual/3-location/34_location_classes.htm</codesets>
+          </codesetd>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Latitude</attrlabl>
+        <attrdef>Latitude of the position of the tag generated by Argos when this status message was received.</attrdef>
+        <attrdefs>http://wildlifecomputers.com/wp-content/uploads/manuals/Spreadsheet-File-Descriptions.pdf</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>47.65299988</rdommin>
+            <rdommax>76.01899719</rdommax>
+            <attrunit>decimal degrees</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Longitude</attrlabl>
+        <attrdef>Longitude of the position of the tag generated by Argos when this status message was received.</attrdef>
+        <attrdefs>http://wildlifecomputers.com/wp-content/uploads/manuals/Spreadsheet-File-Descriptions.pdf</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-179.1179962</rdommin>
+            <rdommax>-122.1119995</rdommax>
+            <attrunit>decimal degrees</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Transmits</attrlabl>
+        <attrdef>The number of Argos transmissions generated by the tag. NOT the number of messages received by Argos.</attrdef>
+        <attrdefs>http://wildlifecomputers.com/wp-content/uploads/manuals/Spreadsheet-File-Descriptions.pdf</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>128</rdommin>
+            <rdommax>63872</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>BattVoltage</attrlabl>
+        <attrdef>Battery voltage measured by the tag during the transmission of this status message.</attrdef>
+        <attrdefs>http://wildlifecomputers.com/wp-content/uploads/manuals/Spreadsheet-File-Descriptions.pdf</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>2.512</rdommin>
+            <rdommax>3.792</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>TransmitCurrent</attrlabl>
+        <attrdef>Transmitter's Power Amp supply current. Used for diagnostics by WC.</attrdef>
+        <attrdefs>http://wildlifecomputers.com/wp-content/uploads/manuals/Spreadsheet-File-Descriptions.pdf</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.004</rdommin>
+            <rdommax>1.02</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Temperature</attrlabl>
+        <attrdef>Temperature measured by the tag just prior to this transmission.</attrdef>
+        <attrdefs>http://wildlifecomputers.com/wp-content/uploads/manuals/Spreadsheet-File-Descriptions.pdf</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-19.92</rdommin>
+            <rdommax>39.75</rdommax>
+            <attrunit>degrees Fahrenheit</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>USGS_WC_eartags_output_files_2009-2011-Argos</enttypl>
+        <enttypd>Each row in this spreadsheet represents a single location derived by multiple Argos messages during a satellite overpass. Column names are set by Wildlife Computers software.  The user is advised that this file includes records before the tag was deployed on a bear and may include records after the tag was removed from the bear.  The user of this data is advised to reference tag deployment histories in BearID in USGS_WC_eartag_deployments_2009-2011.  The data in this file have not undergone any tests for spatial accuracy.</enttypd>
+        <enttypds>http://wildlifecomputers.com/wp-content/uploads/manuals/Spreadsheet-File-Descriptions.pdf</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>DeployID</attrlabl>
+        <attrdef>Friendly name given to the tag by the user.</attrdef>
+        <attrdefs>http://wildlifecomputers.com/wp-content/uploads/manuals/Spreadsheet-File-Descriptions.pdf</attrdefs>
+        <attrdomv>
+          <udom>Is analogous to BearID in USGS_WC_eartag_deployments_2009-2011.  When multiple PTT deployments occurred for a bear, values of DeployID are denoted with “(1)” appended to the value.  For example, DeployID = ‘20446’ is assigned to Ptt = ‘93963’.  This DeployID is associated with a second tag deployment (i.e., Ptt = ‘96872’), hence DeployID = ‘20446  (1)’.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Ptt</attrlabl>
+        <attrdef>Argos Platform Transmitter Terminal identifier</attrdef>
+        <attrdefs>http://wildlifecomputers.com/wp-content/uploads/manuals/Spreadsheet-File-Descriptions.pdf</attrdefs>
+        <attrdomv>
+          <udom>Numbers assigned to identify the PTT. Is analogous to PTT_ID in USGS_WC_eartag_deployments_2009-2011.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>RecordType</attrlabl>
+        <attrdef>Argos Platform Transmitter Terminal identifier (DS (DISPOSE) or DI (DIAG)</attrdef>
+        <attrdefs>http://wildlifecomputers.com/wp-content/uploads/manuals/Spreadsheet-File-Descriptions.pdf</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>DS</edomv>
+            <edomvd>All validated positions and all messages collected by the satellites.</edomvd>
+            <edomvds>http://www.argos-system.org</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>MsgCount</attrlabl>
+        <attrdef>The number of messages received from the PTT for the satellite pass.</attrdef>
+        <attrdefs>http://wildlifecomputers.com/wp-content/uploads/manuals/Spreadsheet-File-Descriptions.pdf</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1</rdommin>
+            <rdommax>25</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Duplicates</attrlabl>
+        <attrdef>The number of identical messages received for the satellite pass. A '0' means no duplicate messages were received for this pass. A value ‘1’ means the original plus one duplicate was received, ‘2’ means the original plus two duplicates…</attrdef>
+        <attrdefs>http://wildlifecomputers.com/wp-content/uploads/manuals/Spreadsheet-File-Descriptions.pdf</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>11</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Corrupt</attrlabl>
+        <attrdef>The number of corrupt messages in the given satellite pass</attrdef>
+        <attrdefs>http://wildlifecomputers.com/wp-content/uploads/manuals/Spreadsheet-File-Descriptions.pdf</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>15</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>AvgInterval</attrlabl>
+        <attrdef>The average inter-message interval in seconds of all received messages for the given satellite pass</attrdef>
+        <attrdefs>http://wildlifecomputers.com/wp-content/uploads/manuals/Spreadsheet-File-Descriptions.pdf</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>44</rdommin>
+            <rdommax>644</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>MinInterval</attrlabl>
+        <attrdef>The minimum inter-message interval in seconds among received messages for a satellite pass</attrdef>
+        <attrdefs>http://wildlifecomputers.com/wp-content/uploads/manuals/Spreadsheet-File-Descriptions.pdf</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>3</rdommin>
+            <rdommax>644</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Date</attrlabl>
+        <attrdef>The month, day, year and time associated with a row.</attrdef>
+        <attrdefs>http://wildlifecomputers.com/wp-content/uploads/manuals/Spreadsheet-File-Descriptions.pdf</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>26Jan2009 1731</rdommin>
+            <rdommax>8Aug2011 2020</rdommax>
+            <attrunit>date time GMT, 24-hour clock</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Satellite</attrlabl>
+        <attrdef>The name of the Argos satellite that received the message</attrdef>
+        <attrdefs>http://wildlifecomputers.com/wp-content/uploads/manuals/Spreadsheet-File-Descriptions.pdf</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>A</edomv>
+            <edomvd>Satellite A</edomvd>
+            <edomvds>http://www.argos-system.org</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>K</edomv>
+            <edomvd>Satellite K</edomvd>
+            <edomvds>http://www.argos-system.org</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>L</edomv>
+            <edomvd>Satellite L</edomvd>
+            <edomvds>http://www.argos-system.org</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>1</edomv>
+            <edomvd>Satellite 1</edomvd>
+            <edomvds>http://www.argos-system.org</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>M</edomv>
+            <edomvd>Satellite M</edomvd>
+            <edomvds>http://www.argos-system.org</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>N</edomv>
+            <edomvd>Satellite N</edomvd>
+            <edomvds>http://www.argos-system.org</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>P</edomv>
+            <edomvd>Satellite P</edomvd>
+            <edomvds>http://www.argos-system.org</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>LocationQuality</attrlabl>
+        <attrdef>Location class assigned by Argos for the computed position of the tag when this status message was received by Argos. Blank cells indicate that no location could be calculated by Argos.</attrdef>
+        <attrdefs>http://wildlifecomputers.com/wp-content/uploads/manuals/Spreadsheet-File-Descriptions.pdf</attrdefs>
+        <attrdomv>
+          <codesetd>
+            <codesetn>Argos User Manual 3.4 Location classes</codesetn>
+            <codesets>http://www.argos-system.org/manual/3-location/34_location_classes.htm</codesets>
+          </codesetd>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Latitude</attrlabl>
+        <attrdef>Latitude calculated by Argos for the satellite pass of interest</attrdef>
+        <attrdefs>http://wildlifecomputers.com/wp-content/uploads/manuals/Spreadsheet-File-Descriptions.pdf</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>33.38399887</rdommin>
+            <rdommax>76.02500153</rdommax>
+            <attrunit>decimal degrees</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Longitude</attrlabl>
+        <attrdef>Longitude calculated by Argos for the satellite pass of interest</attrdef>
+        <attrdefs>http://wildlifecomputers.com/wp-content/uploads/manuals/Spreadsheet-File-Descriptions.pdf</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-179.27600098</rdommin>
+            <rdommax>-111.80900574</rdommax>
+            <attrunit>decimal degrees</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Frequency</attrlabl>
+        <attrdef>Calculated frequency of the transmitter</attrdef>
+        <attrdefs>http://wildlifecomputers.com/wp-content/uploads/manuals/Spreadsheet-File-Descriptions.pdf</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>401636801</rdommin>
+            <rdommax>401677716</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>U.S. Geological Survey, Alaska Science Center</cntorg>
+        </cntorgp>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>4210 University Drive</address>
+          <city>Anchorage</city>
+          <state>Alaska</state>
+          <postal>99508</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>907-786-7000</cntvoice>
+        <cntemail>ascweb@usgs.gov</cntemail>
+      </cntinfo>
+    </distrib>
+    <distliab>Unless otherwise stated, all data, metadata and related materials are considered to satisfy the quality standards relative to the purpose for which the data were collected. Although these data and associated metadata have been reviewed for accuracy and completeness and approved for release by the U.S. Geological Survey (USGS), no warranty expressed or implied is made regarding the display or utility of the data on any other system or for general or scientific purposes, nor shall the act of distribution constitute any such warranty.</distliab>
+    <stdorder>
+      <digform>
+        <digtinfo>
+          <formname>CSV</formname>
+        </digtinfo>
+        <digtopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr>https://doi.org/10.5066/F7057D4R</networkr>
+              </networka>
+            </computer>
+          </onlinopt>
+        </digtopt>
+      </digform>
+      <fees>None</fees>
+    </stdorder>
+  </distinfo>
+  <metainfo>
+    <metd>20170504</metd>
+    <metc>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>U.S. Geological Survey, Alaska Science Center</cntorg>
+        </cntorgp>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>4210 University Drive</address>
+          <city>Anchorage</city>
+          <state>Alaska</state>
+          <postal>99508</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>907-786-7000</cntvoice>
+      </cntinfo>
+    </metc>
+    <metstdn>FGDC Biological Data Profile of the Content Standard for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001.1-1999</metstdv>
+  </metainfo>
+</metadata>

@@ -1,0 +1,18 @@
+<html>
+<head>
+  <title>Polar Bear Tracking</title>
+</head>
+<body>
+ 
+    <h1>Polar bears Tagged for Tracking</h1>
+    
+    {% for bear in bears %}
+    <b> <a href="{% url 'bear_detail' id=bear.id %}">{{bear.bearID }}</a></b>
+      This is a {{ bear.age_class }} aged bear 
+       {{bear.bearID}}, a {{ bear.sex }} bear, who has has an tag in its' {{ bear.ear_applied }} ear, 
+       with {{ bear.pTT_ID }} devise, and was
+       tagged at {{ bear.capture_lat }} and {{ bear.capture_long }}
+    </p>
+    {% endfor %}
+</body>
+</html>
