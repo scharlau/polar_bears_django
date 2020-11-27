@@ -264,22 +264,23 @@ You can add more details to the parse_csv.py file to read the status.csv file in
 
 When you run this new method you will find the parsing breaks due to gaps in the data. It broke because one of the cells had no data, or had the data format different from what the parser was expecting. This is the nature of real-world data. It's not always nice and tidy.
 
-Given we're only parsing this data as an exercise, you can find the broken cell, and then you can either 1. delete the row, and then re-run the parse_csv command, or 
+Given we're only parsing this data as an exercise, you can find the broken cell, and then you can either 
+1. delete the row, and then re-run the parse_csv command, or 
 2. write a few lines of code as an 'if/else' statement to check the value of the cell and to either ignore it, or do something else as required to make it work.
 
-For simplicity here, just delete the row and move on so that you get the file imported and the page views showing. You can see the start of this work if you switch to the 'solution' branch of this repository and look at the rake file there. You'll find the solution branch in the drop-down menu at the top of the file listing on the left.
+For simplicity here, you can just delete the row and move on so that you get the file imported and the page views showing. You can see the start of this work if you switch to the 'solution' branch of this repository and look at the parse_csv.py file there. You'll find the solution branch in the drop-down menu at the top of the file listing on the left.
 
-You need to modify the parse_csv file some more. You do this you need to 'look up' the ID of each bear in the 'bears' table in order to reference this in each 'status' instance. You can do this with a few lines like this:
+You need to modify the parse_csv file some more. You do this you need to 'look up' the ID of each bear in the 'deployment' table (which we're calling 'bears) in order to reference this in each 'status' table (which we're calling 'sighting') instance. You can do this with a few lines like this:
 
-    bear_temp = row[0]
-    bear = Bear.where(["BearID = ?", bear_temp])
-    
+        bear_temp = row[0]
+            print(bear_temp)
+            bear = Bear.objects.filter(bearID = bear_temp).first()
+        ...
+        bear_id = bear,
 
-    deployment_id: bear_id,
-    ...
 We do this in order to ensure that each 'Status' is tied correctly to a 'Deployment'.
 
-This is rough and ready
+This is rough and ready, and is messy, but then so too is the data that we're working with here.
 
 This works, but also shows issues. For example, BearID 20414 appears twice in bears. If you select the second one, then you have no connected sightings. If you pick the first one, then you have LOTS of sightings.
 

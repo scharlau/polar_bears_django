@@ -14,12 +14,7 @@ class Bear(models.Model):
     ear_applied = models.TextField()
     created_date = models.DateTimeField(auto_now_add=True)
 
-    objects = models.Manager()
-
-    class Meta:
-        app_label = 'bears'
-
     def __str__(self):
-        return self.bearID+" "+self.pTT_ID+" "+self.capture_lat+" "+self.capture_long+" "+self.sex+" "+self.age_class+" "+self.ear_applied+" "+self.created_date
+        return f'{self.id}, {self.bearID}, {self.pTT_ID}, {self.capture_lat}, {self.capture_long},{self.sex}, {self.age_class}, {self.ear_applied}, {self.created_date}'
 
     
