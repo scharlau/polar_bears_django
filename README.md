@@ -269,17 +269,17 @@ Given we're only parsing this data as an exercise, you can find the broken cell,
 
 For simplicity here, just delete the row and move on so that you get the file imported and the page views showing. You can see the start of this work if you switch to the 'solution' branch of this repository and look at the rake file there. You'll find the solution branch in the drop-down menu at the top of the file listing on the left.
 
-You need to modify the parse_csv file some more. You do this you need to 'look up' the ID of each bear in the 'bears' table in order to reference this in each 'status' instance. You can do this with a few lines like this:
+You need to modify the parse_csv file some more. You do this you need to 'look up' the ID of each bear in the 'deployment' table (which we're calling 'bears) in order to reference this in each 'status' table (which we're calling 'sighting') instance. You can do this with a few lines like this:
 
-    bear_temp = row[0]
-    bear = Bear.where(["BearID = ?", bear_temp])
-    
+        bear_temp = row[0]
+            print(bear_temp)
+            bear = Bear.objects.filter(bearID = bear_temp).first()
+        ...
+        bear_id = bear,
 
-    deployment_id: bear_id,
-    ...
 We do this in order to ensure that each 'Status' is tied correctly to a 'Deployment'.
 
-This is rough and ready
+This is rough and ready, and messy as the data is messy.
 
 This works, but also shows issues. For example, BearID 20414 appears twice in bears. If you select the second one, then you have no connected sightings. If you pick the first one, then you have LOTS of sightings.
 
