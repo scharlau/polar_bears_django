@@ -76,7 +76,7 @@ We can now take the downloaded polar bear data and put the 'PolarBear_Telemetry_
 
 we need to modify the settings.py file in the mysite app, so that it knows to include the 'bear' contents. We do this by adding a line in the section on 'INSTALLED_APPS'. Add this line to the end of the block ( plus the , at the end of the line above it).
 
-        'bears.apps.BearsConfig',
+        'bears',
 
 Now we can open 'bears/models.py' and start adding the schema for our tables. We'll start by adding a model for the bears. There is a lot of info in the csv file, but we'll only focus on the basics. Add the missing lines so that your file looks like this:
 
@@ -154,7 +154,9 @@ Under the 'bears' app create a folder 'management' and inside that create anothe
                     bear.save()
             print("data parsed successfully")
 
-With this we can drop the data from the table, and then load it in, as required. We don't use any libraries for this as we want to pull specific fields from the file.
+With this we can drop the data from the table, and then load it in, as required. We don't use any libraries for this as we want to pull specific fields from the file. Run the file with the command:
+
+        python3 manage.py parse_csv
 
 ## Creating Views
 We can now create views for our data so that we can see all of the bears, plus also each individual one.
