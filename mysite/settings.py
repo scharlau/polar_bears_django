@@ -26,7 +26,7 @@ SECRET_KEY = 'ha+ub#-6vfjlw*jk-+h1nr@$0n5b!6==^xo5ss)31vkh#06$89'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ancient-reef-80308.herokuapp.com']
+ALLOWED_HOSTS = ['localhost','ancient-reef-80308.herokuapp.com']
 
 
 # Application definition
@@ -122,3 +122,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# Heroku: Update database configuration from $DATABASE_URL.
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
