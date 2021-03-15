@@ -6,10 +6,9 @@ from django.core.management.base import BaseCommand, CommandError
 
 from bears.models import Bear
 
-'''
-We use the command tools so that we gain access to our models and database connections
-https://docs.djangoproject.com/en/3.1/howto/custom-management-commands/ 
-'''
+#We use the command tools so that we gain access to our models and database connections
+#https://docs.djangoproject.com/en/3.1/howto/custom-management-commands/ 
+
 
 class Command(BaseCommand):
     help = 'Load data from csv'
