@@ -310,10 +310,3 @@ Now that the basics are working, we can see what else is possible in this applic
 Round one you've done already by adding the second table with data from the 'status.csv' file. 
 Round two should be adding a list of sightings for each bear on its details page.
 Round three should be exploring what else might be possible, even if only to total up some values of the bear attributes to display on a page.
-
-
-
-
-    
-
-
