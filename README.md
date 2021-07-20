@@ -1,15 +1,17 @@
 # Parsing Polar Bear Data with Python and Django
-This is a demonstrator app focusing on different ways to use python and flask to parse data for a web application using polar bear tracking data. 
+This is a demonstrator app focusing on how you can use python to parse data for a Django web application using polar bear tracking data. This uses the command module of Django as a means to hook into the Django ORM system as we parse the csv data.
+
+Django follows a model-view-controller architecture so that you can put code in a 'good' place for reuse. However, in Django the names are different. Models are models, views in Django are controllers, and it uses templates as views. Remember this as we go forward and it will help to keep things clearer.
 
 The goal of 'deliberate practice' is to think about how you'd solve this challenge, and to work at developing code to make this work. There is no single 'correct' version of this code. The purpose of the exercise it become familiar with different ways of making the application work. You should explore how this simple application is done in python with flask and sqlite3 so that you understand how the components work together to show up in the views you see in the browser.
 
 Under 'deliberate practice' we offer up the challenge, then think about options for developing a solution, and code for 12 minutes. After that we pause to discuss how people are approaching the problem, and what they're trying to do. This should be repeated three times and then wrapped up with time for people to express what they found most useful during the session. This should take an hour.
 
-Step 1) We'll use data on Polar bears in Alaska to develop our application Data is taken from https://alaska.usgs.gov/products/data.php?dataid=130 Download the zip file and unpack it to a folder. This will give us more data than we need, but that's ok. We're only using it to learn how to import data.
+Step 1) We'll use data on Polar bears in Alaska to develop our application Data is taken from https://alaska.usgs.gov/products/data.php?dataid=130 Download the zip file and unpack it to a folder. This will give us more data than we need, but that's ok. We're only using it to learn how to import data to use in a web application.
 
 #### Table Relationships for the Data
 
-We'll import data from two related tables. Each polar bear is listed in the USGS_WC_eartag_deployments_2009-2011.csv file. Each subsequent sighting of a bear is recorded in the USGS_WC_eartags_output_files_2009-2011-Status.csv file. The DeployID column in the second file references the BearID column in the first file. Therefore we end up with a one_to_many relationship between the two files. 
+We'll import data from two related tables. Each polar bear is listed in the USGS_WC_eartag_deployments_2009-2011.csv file and is identified in the BearID column. Each subsequent sighting of a bear is recorded in the USGS_WC_eartags_output_files_2009-2011-Status.csv file. The DeployID column in the second file references the BearID column in the first file. Therefore we end up with a one_to_many relationship between the two files. 
 
 We are not using all of the columns that are here. We could use all of the data, but as we're not biologists, we'll only take what looks interesting to us. You can see the table structure in the parse_csv.py file where we create the tables.
 
@@ -24,7 +26,7 @@ We will use Django (https://www.djangoproject.com) as our web framework for the 
         
         pip install django
 
-And that will install django version 3.1.3 with its associated dependencies. We can now start to build the application.
+And that will install django version 3.1.3 (or newer) with its associated dependencies. We can now start to build the application.
 
 Now we can start to create the site using the django admin tools. Issue this command, and don't forget the '.' at the end of the line, which says 'create it in this directory'. This will create the admin part of our application, which will sit alongside the actual site. 
 
@@ -78,7 +80,7 @@ we need to modify the settings.py file in the mysite app, so that it knows to in
 
         'bears',
 
-Now we can open 'bears/models.py' and start adding the schema for our tables. We'll start by adding a model for the bears. There is a lot of info in the csv file, but we'll only focus on the basics. Add the missing lines so that your file looks like this:
+Now we can open 'bears/models.py' and start adding the schema for our tables. We'll start by adding a model for the bears. There is a lot of info in the csv file, but we'll only focus on some basic attributes. We label all of the attributes with a lower-case letter so that if (when) we move this to a different database, such as Postgresql, we don't have issues. Add the missing lines so that your file looks like this:
 
         from django.conf import settings
         from django.db import models
@@ -111,6 +113,8 @@ This will read the models.py file and generate a migration file based on changes
 Second, we run the generated migration with the command:
 
         python3 manage.py migrate bears
+
+ In the future, anytime that you edit the model, you need to run makemigration, and then migrate commands to have the database changes happen.
 
 Now we have the migration done and the table is created in our database, and we can load our data into the database. We do this using Django's admin commands, which provide access to the models, and thus the database for us. See more here: https://docs.djangoproject.com/en/3.1/howto/custom-management-commands/ 
 
@@ -158,8 +162,10 @@ With this we can drop the data from the table, and then load it in, as required.
 
         python3 manage.py parse_csv
 
+This should run fine.
+
 ## Creating Views
-We can now create views for our data so that we can see all of the bears, plus also each individual one.
+We can now create views for our data so that we can see all of the bears, plus also have a page to view details about each individual one.
 
 Open mysite/urls.py and add 'include' to the import list, and add the second line as well below the one for 'admin.site.urls':
 
@@ -178,13 +184,15 @@ Next go into the 'bears' folder and create an empty 'urls.py' file for us to man
         path('', views.bears_list, name='bear_list'),
         ]
 
-We can now open 'bears/views.py' to add the view. At the
+We can now open 'bears/views.py' to add the view. At this method to generate a list of bears.
 
         def bear_list(request):
                 bears = Bear.objects.all()
                 return render(request, 'bears/bear_list.html', {'bears' : bears})
 
-Next, we need to create the actual html page to display. As before, create a 'templates' folder under 'bears' and then another 'bears' folder under that. Then create a file at 'bears/templates/bears/bear_list.html' which has this simple code:
+Next, we need to create the actual html page to display. We'll put folders in the place that Django looks for them, which seems like extra work, but is convention. 
+
+As before, create a 'templates' folder under 'bears' and then another 'bears' folder under that. Then create a file at 'bears/templates/bears/bear_list.html' which has this simple code:
 
         <html><head>
         <title>Polar Bear Tracking</title>
@@ -199,19 +207,19 @@ Next, we need to create the actual html page to display. As before, create a 'te
             {% endfor %}
         </body></html>
 
-Showing the full list, is a start, but it would be better to also show individual bears, so that later we can add the data for their sightings from the other csv file. We do that with a few steps.
+This will show the full list of bears. A better version would also show individual bears, so that later we can add the data for their sightings from the other csv file. We can do that with a few steps.
 
 First, add a link to indivual bears on the bear_list.html page around 'Bear' like this:
 
          <b> <a href="{% url 'bear_detail' id=bear.id %}">{{bear.bearID }}</a></b>
 
-This will link the bear_detail page to the bear.id value, which we'll pass too the query for the page.
+This will link the bear_detail page to the bear.id value, which we'll pass to the query for the page.
 
 Second, we add a line in bears/urls.py for the view, which follows the one for the list:
 
         path('bear/<int:id>/', views.bear_detail, name= 'bear_detail'),
 
-This tells the view to expect and integer as 'id' to be used in the query.
+This tells the view to expect an integer as 'id' to be used in the query.
 
 Third, we add some imports to help us, and add a view to the bears/views.py file:
 
@@ -226,7 +234,7 @@ Third, we add some imports to help us, and add a view to the bears/views.py file
             bear = get_object_or_404(Bear, id=id)
             return render(request, 'bears/bear_detail.html', {'bear' : bear}
         
-Note, the import for 'get_object_or_404' at the top. Then we use this to query for the details of the bear.
+Note, the import for 'get_object_or_404' at the top. Then we use this to query for the details of the bear. If there is no bear returned from the query, then the page renders a 404 error message.
 
 Fourth, is adding a new file to display the code at templates/bears/bear_detail.html with this code:
 
@@ -260,11 +268,11 @@ This will give us a table that references the deployments table via the deployme
 
 You can add more details to the parse_csv.py file to read the status.csv file in, and to store the details into a new 'status' table in a similar manner as before.
 
-******************************************************
-**** The data is messy and the parsing will break ****
-******************************************************
+*****************************************************************
+**** The data is messy and the parsing will eventually break ****
+*****************************************************************
 
-When you run this new method you will find the parsing breaks due to gaps in the data. It broke because one of the cells had no data, or had the data format different from what the parser was expecting. This is the nature of real-world data. It's not always nice and tidy.
+When you run this new method you will find the parsing breaks due to gaps in the data. It broke because one of the cells had no data, or had the data format different from what the parser was expecting. This is the nature of real-world data. It's not usually nice and tidy.
 
 Given we're only parsing this data as an exercise, you can find the broken cell, and then you can either 
 1. delete the row, and then re-run the parse_csv command, or 
@@ -272,7 +280,7 @@ Given we're only parsing this data as an exercise, you can find the broken cell,
 
 For simplicity here, you can just delete the row and move on so that you get the file imported and the page views showing. You can see the start of this work if you switch to the 'solution' branch of this repository and look at the parse_csv.py file there. You'll find the solution branch in the drop-down menu at the top of the file listing on the left.
 
-You need to modify the parse_csv file some more. You do this you need to 'look up' the ID of each bear in the 'deployment' table (which we're calling 'bears) in order to reference this in each 'status' table (which we're calling 'sighting') instance. You can do this with a few lines like this:
+You need to modify the parse_csv file some more. In order to do this you need to 'look up' the ID of each bear in the 'deployment' table (which we're calling 'bears) in order to reference this as a foreign key in each 'status' table (which we're calling 'sighting') instance. You can do this with a few lines like this:
 
         bear_temp = row[0]
             print(bear_temp)
@@ -288,6 +296,12 @@ This works, but also shows issues. For example, BearID 20414 appears twice in be
 
 From here you could show the locations of the sightings on a map using the GPS coordinates. You could also do a chart showing how many sightings there were for each bear by date. You could also do something with the other categories to produce visualisations to suit your needs.
 
+## Doing the work
+Now that the basics are working, we can see what else is possible in this application.
+
+Round one you've done already by adding the second table with data from the 'status.csv' file. 
+Round two should be adding a list of sightings for each bear on its details page.
+Round three should be exploring what else might be possible, even if only to total up some values of the bear attributes to display on a page.
 
 
 
