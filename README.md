@@ -266,31 +266,39 @@ The file ending with ...status.csv holds details for sightings of bears, so that
 
 This will give us a table that references the deployments table via the deployment_id column, and let us show all sightings of a bear on the same page.
 
-You can add more details to the parse_csv.py file to read the status.csv file in, and to store the details into a new 'status' table in a similar manner as before.
+You can copy lines 24-30 of the parse_csv.py file and paste them below 'bear.save()' line, and modify the code to read the ...status.csv file in, and to store the details into a new 'sightings' table by adding this code below: 
+
+        bear_temp = row[0]  
+        print(bear_temp)
+        bear = Bear.objects.filter(bearID = bear_temp).first()
+        print(bear.id)
+
+        sighting = Sighting.objects.create(
+        deploy_id = int(row[0]),
+        bear_id = bear,
+        recieved = row[2],
+        latitude = float(row[4]),
+        longitude = float(row[5]),
+        temperature = float(temp_temp),
+        )
+        sighting.save()
+
+Let's look at what happens here. We 'look up' the ID of each bear in the 'deployment' table (which we're calling 'bears) in order to reference this as a foreign key in each 'status' table (which we're calling 'sighting') instance. Once we find the 'bear', then we can create a 'sighting'.
+
+This is rough and ready, and is messy, but then so too is the data that we're working with here.
+
 
 *****************************************************************
 **** The data is messy and the parsing will eventually break ****
 *****************************************************************
 
-When you run this new method you will find the parsing breaks due to gaps in the data. It broke because one of the cells had no data, or had the data format different from what the parser was expecting. This is the nature of real-world data. It's not usually nice and tidy.
+When you run this new method you will find the parsing breaks due to gaps in the data. It might break because one of the cells had no data, or had the data format different from what the parser was expecting. This is the nature of real-world data. It's not usually nice and tidy.
 
 Given we're only parsing this data as an exercise, you can find the broken cell, and then you can either 
 1. delete the row, and then re-run the parse_csv command, or 
-2. write a few lines of code as an 'if/else' statement to check the value of the cell and to either ignore it, or do something else as required to make it work.
+2. write a few lines of code to wrap the above in an 'if/else' statement to check the value of the cell and to either ignore it, or do something else as required to make it work.
 
 For simplicity here, you can just delete the row and move on so that you get the file imported and the page views showing. You can see the start of this work if you switch to the 'solution' branch of this repository and look at the parse_csv.py file there. You'll find the solution branch in the drop-down menu at the top of the file listing on the left.
-
-You need to modify the parse_csv file some more. In order to do this you need to 'look up' the ID of each bear in the 'deployment' table (which we're calling 'bears) in order to reference this as a foreign key in each 'status' table (which we're calling 'sighting') instance. You can do this with a few lines like this:
-
-        bear_temp = row[0]
-            print(bear_temp)
-            bear = Bear.objects.filter(bearID = bear_temp).first()
-        ...
-        bear_id = bear,
-
-We do this in order to ensure that each 'Status' is tied correctly to a 'Deployment'.
-
-This is rough and ready, and is messy, but then so too is the data that we're working with here.
 
 This works, but also shows issues. For example, BearID 20414 appears twice in bears. If you select the second one, then you have no connected sightings. If you pick the first one, then you have LOTS of sightings.
 
