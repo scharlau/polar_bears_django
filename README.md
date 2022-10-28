@@ -305,7 +305,11 @@ This works, but also shows issues. For example, BearID 20414 appears twice in be
 From here you could show the locations of the sightings on a map using the GPS coordinates. You could also do a chart showing how many sightings there were for each bear by date. You could also do something with the other categories to produce visualisations to suit your needs.
 
 ## Using the tests
-There are some basic tests here too, so that you can see how you can test the code works correctly. They are in the 'tests' folder, and cover model and view tests. There is some repeated code to load the test database, which can probably be refactored out into a sepaate file that is called by the test files. 
+There are some basic tests here too, so that you can see how you can test the code works correctly. They are in the 'tests' folder, and cover model and view tests. There is some repeated code to load the test database, which can probably be refactored out into a sepaate file that is called by the test files. Run the tests with the command:
+
+        python3 manage.py test
+
+This should run fine.
 
 ## Doing the work
 Now that the basics are working, we can see what else is possible in this application.
