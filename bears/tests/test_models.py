@@ -1,7 +1,8 @@
-from django.test import TestCase
-from .models import Bear
+from django.test import Client, TestCase
+from bears.models import Bear
 
-# Create your tests here.
+#set up the models
+
 class BearModelTest (TestCase):
     @classmethod
     def setUpTestData(cls):
@@ -28,3 +29,5 @@ class BearModelTest (TestCase):
         self.assertEqual(bear.pTT_ID, 345)
         bears =Bear.objects.all()
         self.assertEqual(bears.count(), 2)
+
+
