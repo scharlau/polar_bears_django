@@ -18,5 +18,8 @@ class Bear(models.Model):
 
     def __str__(self):
         return f'{self.id}, {self.bearID}, {self.pTT_ID}, {self.capture_lat}, {self.capture_long},{self.sex}, {self.age_class}, {self.ear_applied}, {self.created_date}'
-
+ 
+    def female():
+        females = Bear.objects.filter(sex='F')
+        return females
     
