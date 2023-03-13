@@ -26,7 +26,7 @@ class Sighting(models.Model):
     temperature = models.FloatField()
     created_date = models.DateTimeField(auto_now_add=True)
 
-def __str__(self):
-        return f'{self.bear_id},{self.deploy_id}, {self.recieved}, {self.latitude}, {self.longitude}, {self.temperature}, {self.created_date}'
+    def __str__(self):
+            return f'{self.bear_id},{self.deploy_id}, {self.recieved}, {self.latitude}, {self.longitude}, {self.temperature}, {self.created_date}'
 
     
