@@ -52,10 +52,6 @@ class Command(BaseCommand):
                 temp_temp = 0
                 temp_bear_id = 0
                 if row[4] is not '':
-                    if row[9] is not '':
-                        temp_temp = row[9]
-                    else:
-                        temp_temp = 0 # this works but not if we want to be correct
 
                     bear_temp = row[0]
                     print(bear_temp)
