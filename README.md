@@ -199,7 +199,7 @@ As before, create a 'templates' folder under 'bears' and then another 'bears' fo
         </head><body>
             <h1>Polar bears Tagged for Tracking</h1>
             {% for bear in bears %}
-             <b> <a href={%url_for('bear', bear_id= bear.id }}>{{bear.bearID }}</a></b>
+             <b> <a href={%url_'bear'_detail, id= bear.id %}>{{bear.bearID }}</a></b>
             This is a {{ bear.age_class }} aged bear 
             {{bear.bearID}}, a {{ bear.sex }} bear, who has has an tag in its' {{ bear.ear_applied }} ear, with {{ bear.pTT_ID }} devise, and was
             tagged at {{ bear.capture_lat }} and {{ bear.capture_long }}
@@ -262,28 +262,58 @@ Finally, we're ready to do some more work with this so that we can add the sight
 
 The file ending with ...status.csv holds details for sightings of bears, so that you could see where and when their radio transmitters were noticed. Again, we're only interested in some columns from the file.
 
- deployID INTEGRER, recieved TEXT, latitude REAL, longitude REAL, temperature REAL, deployment_id INTEGER
+Edit the models.py file and add a new class for Sighting like this:
+
+        class Sighting(models.Model):
+                bear_id = models.ForeignKey('bears.Bear', on_delete=models.CASCADE, related_name='sightings')
+                deploy_id = models.IntegerField(default=None)
+                recieved = models.TextField()
+                latitude = models.FloatField()
+                longitude = models.FloatField()
+                temperature = models.FloatField()
+                created_date=models.DateTimeField(auto_now_add=True)
+
+                def __str__(self):
+                        return f'{self.bear_id}, {self.deploy_id}, {self.recieved}, {self.latitude}, {self.longitude}, {self.temperature}, {self.created_date}'
 
 This will give us a table that references the deployments table via the deployment_id column, and let us show all sightings of a bear on the same page.
 
+Run the makemigrations command again, followed by migrate, and then you should have the new table in the database.
+
 You can copy lines 24-30 of the parse_csv.py file and paste them below 'bear.save()' line, and modify the code to read the ...status.csv file in, and to store the details into a new 'sightings' table by adding this code below: 
 
-        bear_temp = row[0]  
-        print(bear_temp)
-        bear = Bear.objects.filter(bearID = bear_temp).first()
-        print(bear.id)
+         base_dir = Path(__file__).resolve().parent.parent.parent.parent
+        with open(str(base_dir) + '/bears/data/USGS_WC_eartags_output_files_2009-2011-Status.csv', newline='') as f:
+            reader = csv.reader(f, delimiter=",")
+            next(reader) # skip the header line
+            for row in reader:
+                print(row)
+                # sanity checking for empty cells - and skip row if it is - this clears up most missing data to parse the file
+                # the file will still fall over at some point, but you get enough to show a good example
+            
+                if row[4] is  not '':
+                    bear_temp = row[0]  
+                    print(bear_temp)
+                    bear = Bear.objects.filter(bearID = bear_temp).first()
+                    print(bear.id)
 
-        sighting = Sighting.objects.create(
-        deploy_id = int(row[0]),
-        bear_id = bear,
-        recieved = row[2],
-        latitude = float(row[4]),
-        longitude = float(row[5]),
-        temperature = float(temp_temp),
-        )
-        sighting.save()
+                    sighting = Sighting.objects.create(
+                    deploy_id = int(row[0]),
+                    bear_id = bear,
+                    recieved = row[2],
+                    latitude = float(row[4]),
+                    longitude = float(row[5]),
+                    temperature = float(row[9]),
+                    )
+                    sighting.save()
+                else:
+                    next(reader)
+
+        print("data parsed successfully")
 
 Let's look at what happens here. We 'look up' the ID of each bear in the 'deployment' table (which we're calling 'bears) in order to reference this as a foreign key in each 'status' table (which we're calling 'sighting') instance. Once we find the 'bear', then we can create a 'sighting'.
+
+The 'if row[4 i not '' statement checks the value and if it is NOT empty, ie '', then we create a sighting, otherwise, it triggers the 'else' statement, and skips the row by moving onto the next one. As we are not scientists, this way of dealing with the data is fine.
 
 This is rough and ready, and is messy, but then so too is the data that we're working with here.
 
@@ -294,15 +324,37 @@ This is rough and ready, and is messy, but then so too is the data that we're wo
 
 When you run this new method you will find the parsing breaks due to gaps in the data. It might break because one of the cells had no data, or had the data format different from what the parser was expecting. This is the nature of real-world data. It's not usually nice and tidy.
 
-Given we're only parsing this data as an exercise, you can find the broken cell, and then you can either 
-1. delete the row, and then re-run the parse_csv command, or 
-2. write a few lines of code to wrap the above in an 'if/else' statement to check the value of the cell and to either ignore it, or do something else as required to make it work.
-
 For simplicity here, you can just delete the row and move on so that you get the file imported and the page views showing. You can see the start of this work if you switch to the 'solution' branch of this repository and look at the parse_csv.py file there. You'll find the solution branch in the drop-down menu at the top of the file listing on the left.
 
 This works, but also shows issues. For example, BearID 20414 appears twice in bears. If you select the second one, then you have no connected sightings. If you pick the first one, then you have LOTS of sightings.
 
 From here you could show the locations of the sightings on a map using the GPS coordinates. You could also do a chart showing how many sightings there were for each bear by date. You could also do something with the other categories to produce visualisations to suit your needs.
+
+### Making the Sightings Visible
+With the sightings in the database we now need to make a few changes in our other files in order to make them visible on the bear_detail.html page.
+1. Edit the views.py file and add the sightings to the bear_detail method so that it looks like this:
+
+        def bear_detail(request, id):
+                bear = get_object_or_404(Bear, id=id)
+                sightings = Sighting.objects.filter(bear_id=id)
+                return render(request, 'bears/bear_detail.html', {'bear': bear, 'sightings': sightings})
+
+2. Edit the views.py file and add an import statement for Sighting, so the line reads: from .models import Bear, Sighting
+3. Edit the bear_detail.html file so that it loops through the sighting objects like this:
+
+         <p>Sightings via Radio Device</p>
+             {% for sighting in sightings %}
+        <p>Bear: 
+           
+       <b>{{sighting.bear_id}}</b> with deploy_id:  
+       {{sighting.deploy_id}} was picked up 
+        {{ sighting.recieved}} at 
+       {{sighting.latitude }}	latitude and 
+       {{sighting.longitude }} longitude where the temperature was: 
+        {{ sighting.temperature }} (although 0 represents an empty value)
+       </p>
+        {% endfor %}
+
 
 ## Using the tests
 There are some basic tests here too, so that you can see how you can test the code works correctly. They are in the 'tests' folder, and cover model and view tests. There is some repeated code to load the test database, which can probably be refactored out into a sepaate file that is called by the test files. Run the tests with the command:
